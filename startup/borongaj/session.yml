@@ -5,23 +5,12 @@ windows:
   - roscore:
       layout: tiled
       panes:
-        - sleep 1 && ros2 launch zed_wrapper zed_camera.launch.py camera_name:=front camera_model:=zedxm serial_number:=58263586
-        - sleep 8 && ros2 launch ros2_aruco aruco_recognition_custom.launch.py aruco_custom_config:="$(pwd)/custom_config/aruco_parameters_front.yaml"
-        - sleep 10 && ros2 launch zed_wrapper zed_camera.launch.py camera_name:=back  camera_model:=zedxm serial_number:=55239050
-        - sleep 15 && ros2 launch ros2_aruco aruco_recognition_custom.launch.py aruco_custom_config:="$(pwd)/custom_config/aruco_parameters_back.yaml"
-  # - ar_marker:
-  #     layout: tiled
-  #     panes:
-  #         - sleep 5 && ros2 launch ros2_aruco aruco_recognition_custom.launch.py aruco_custom_config:="$(pwd)/custom_config/aruco_parameters_front.yaml"
-  #         - sleep 10 && ros2 launch ros2_aruco aruco_recognition_custom.launch.py aruco_custom_config:="$(pwd)/custom_config/aruco_parameters_back.yaml"
+        - sleep 1 && ros2 launch ros2_aruco aruco_recognition_custom.launch.py aruco_custom_config:="$(pwd)/custom_config/aruco_parameters_front.yaml"
+        - sleep 1 && ros2 launch ros2_aruco aruco_recognition_custom.launch.py aruco_custom_config:="$(pwd)/custom_config/aruco_parameters_back.yaml"
   - static_tf:
       layout: tiled
       panes:
         - sleep 3 && ros2 launch ros2_aruco static_tf.launch.py
-  - foxglove:
-      layout: tiled
-      panes:
-        - history -s "ros2 launch foxglove_bridge foxglove_bridge_launch.xml"
   - bagger:
       layout: tiled
       panes:
