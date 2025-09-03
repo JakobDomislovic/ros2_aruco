@@ -1,0 +1,25 @@
+/aruco_node:
+  ros__parameters:
+    marker_size: 0.22
+    aruco_dictionary_id: DICT_ARUCO_ORIGINAL
+    image_topic: /front/zed_node/rgb/image_rect_color
+    camera_info_topic: /front/zed_node/rgb/camera_info
+    
+    poses_topic: /front/aruco/poses
+    markers_topic: /front/aruco/markers
+    transformed_poses_topic: /front/aruco/transformed_poses
+    enu_transformed_poses_topic: /front/aruco/enu_transformed_poses
+    enu_robot_pose_topic: /front/enu_robot_pose
+
+    robot_frame_id: base_link
+    robot_odom: /scout/main/odometry
+
+    # ar_x_local: 20.00
+    # ar_y_local: 127.01
+    # ar_z_local: 0.4
+    # ar_theta_local: -1.58 # rad
+
+    ARTags:
+      - "1 109667.91 88171.27 0.5"
+      - "22 25.0 120.0 0.4"
+      - "55 20.0 127.0 0.4"
