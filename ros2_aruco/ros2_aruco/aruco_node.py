@@ -162,7 +162,7 @@ class ArucoNode(rclpy.node.Node):
         # flags
         self.camera_info_received = False
         self.transform_flag = False
-        self.odom_received = False
+        self.odom_received = True  # OVO TREBA BITI SETANO NA FALSE KOD PRAVIH TESTOVA
 
         # tf
         self.tf_buffer = tf2_ros.Buffer()
@@ -391,6 +391,9 @@ class ArucoNode(rclpy.node.Node):
             # self.get_logger().info(f"y diff: {np.abs(enu_robot_pose.pose.position.y - self.robot_position.y)}")
             
             # self.transform_flag = False
+        else:
+            self.get_logger().info("No markers detected or odom not received")
+        
         self.odom_received = False
 
     def _create_3d_marker_corners(self):
